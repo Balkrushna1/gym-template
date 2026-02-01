@@ -187,7 +187,7 @@ const Programs = () => {
     {
       title: "CrossFit",
       description: "Functional fitness that prepares you for anything life throws your way.",
-      image: "https://images.unsplash.com/photo-1533681904393-9ab6eea9e171?q=80&w=2070&auto=format&fit=crop", // crossfit box jump
+      image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=2070&auto=format&fit=crop", // crossfit workout
     },
     {
       title: "Personal Training",
@@ -251,7 +251,7 @@ const Trainers = () => {
     {
       name: "Sarah Chen",
       role: "Yoga & Mobility",
-      image: "https://images.unsplash.com/photo-1609899537878-39d4a797f21d?q=80&w=1974&auto=format&fit=crop", // female trainer
+      image: "https://images.unsplash.com/photo-1548690312-e3b507d8c110?q=80&w=1974&auto=format&fit=crop", // female trainer yoga
     },
     {
       name: "Marcus Johnson",
