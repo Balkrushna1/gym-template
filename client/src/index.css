@@ -71,3 +71,32 @@
 .neon-shadow {
   box-shadow: 0 0 10px hsla(var(--primary), 0.3), 0 0 20px hsla(var(--primary), 0.1);
 }
+
+/* Prose styling for blog articles */
+.prose {
+  @apply text-muted-foreground;
+}
+
+.prose p {
+  @apply mb-4 leading-relaxed;
+}
+
+.prose h3 {
+  @apply text-xl font-bold text-foreground mt-6 mb-3;
+}
+
+.prose h4 {
+  @apply text-lg font-semibold text-foreground mt-4 mb-2;
+}
+
+.prose ul {
+  @apply list-disc pl-6 mb-4 space-y-2;
+}
+
+.prose li {
+  @apply text-muted-foreground;
+}
+
+.prose strong {
+  @apply text-foreground font-semibold;
+}

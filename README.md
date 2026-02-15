@@ -1,6 +1,6 @@
 # Gym Website Template
 
-A modern, stylish gym website built with React, TypeScript, and Express. Features smooth animations, a contact form, and a fully responsive design.
+A modern, stylish gym website built with React, TypeScript, and Express. Features smooth animations, interactive components, multiple pages with proper routing, and a fully responsive design.
 
 ## 🚀 Tech Stack
 
@@ -9,7 +9,37 @@ A modern, stylish gym website built with React, TypeScript, and Express. Feature
 - **Styling**: Tailwind CSS, Framer Motion
 - **UI Components**: Radix UI, shadcn/ui
 - **Forms**: React Hook Form with Zod validation
-- **Routing**: Wouter
+- **Routing**: Wouter (lightweight React router)
+
+## 🏗️ Architecture
+
+### Multi-Page Application
+
+The website is organized as a **multi-page application** with proper routing:
+
+#### **Pages:**
+
+- `/` - Home page with hero, about, testimonials, schedule, gallery, contact
+- `/programs` - Dedicated programs page with detailed program information
+- `/pricing` - Membership plans with enrollment flow
+- `/blog` - Blog listing with full article reading experience
+
+#### **Benefits of Multi-Page Structure:**
+
+✅ Better performance (lazy loading)  
+✅ SEO friendly (individual page URLs)  
+✅ Shareable links to specific sections  
+✅ Clean code organization  
+✅ Professional web architecture  
+✅ Browser history and navigation
+
+### Smart Navigation
+
+The navbar intelligently switches between:
+
+- **Scroll links** - When on home page (smooth scrolling to sections)
+- **Page links** - When navigating between different pages
+- **Responsive** - Mobile-friendly hamburger menu
 
 ## 📋 Prerequisites
 
@@ -64,9 +94,20 @@ The application will be available at `http://localhost:5000` (or the port specif
 gym-template/
 ├── client/              # Frontend React application
 │   ├── src/
-│   │   ├── components/  # React components
-│   │   ├── pages/       # Page components
+│   │   ├── components/  # Reusable React components
+│   │   │   ├── ui/      # shadcn/ui components
+│   │   │   ├── Navbar.tsx     # Smart navigation component
+│   │   │   └── SectionHeading.tsx
+│   │   ├── pages/       # Page components (routes)
+│   │   │   ├── Home.tsx        # Landing page
+│   │   │   ├── Programs.tsx    # Programs showcase
+│   │   │   ├── Pricing.tsx     # Membership plans
+│   │   │   ├── BlogPage.tsx    # Blog articles
+│   │   │   └── not-found.tsx   # 404 page
 │   │   ├── hooks/       # Custom React hooks
+│   │   │   ├── use-contact.ts
+│   │   │   ├── use-mobile.tsx
+│   │   │   └── use-toast.ts
 │   │   └── lib/         # Utilities and helpers
 │   ├── public/          # Static assets
 │   └── index.html       # HTML template
@@ -78,6 +119,83 @@ gym-template/
 │   └── routes.ts        # API route definitions
 └── script/              # Build scripts
 ```
+
+## ✨ Features
+
+### 🏠 Home Page
+
+- **Hero Section** - Eye-catching header with CTA buttons
+- **About Section** - Animated statistics counter
+- **Testimonials** - Member reviews with ratings
+- **Success Stories** - Before/after transformations with stats
+- **Class Schedule** - Weekly timetable with all classes
+- **Gallery** - Facility photos with hover effects
+- **FAQ** - Collapsible frequently asked questions
+- **Contact Form** - Working contact form with validation
+
+### 💪 Programs Page
+
+- **Program Cards** - 6 detailed fitness programs
+- **Interactive Modals** - Click to view full program details
+- **Program Information:**
+  - Duration & schedule
+  - Skill level requirements
+  - Instructor credentials
+  - Key benefits list
+  - Pricing information
+- **Enrollment CTA** - Direct enrollment buttons
+
+### 💰 Pricing Page
+
+- **3 Membership Tiers** - Basic, Elite, Pro
+- **Feature Comparison** - Clear lists of what's included
+- **Interactive Enrollment** - Full signup flow with modal
+- **Enrollment Form:**
+  - Personal information collection
+  - Date picker for start date
+  - Payment method selection
+  - Form validation
+- **Membership FAQs** - Common pricing questions
+
+### 📚 Blog Page
+
+- **Article Grid** - Categorized fitness articles
+- **Full Article View** - Click to read complete articles
+- **Rich Content** - Formatted text with headings, lists, images
+- **Article Metadata** - Author, date, read time, category tags
+- **Mock Articles:**
+  - Exercise guides
+  - Nutrition tips
+  - Training science
+
+### 🎨 UI/UX Features
+
+- **Responsive Design** - Optimized for all screen sizes
+- **Smooth Animations** - Framer Motion page transitions
+- **Dark Theme** - Modern dark mode design with neon accents
+- **Interactive Elements:**
+  - Hover effects on cards
+  - Animated counters
+  - Modal dialogs
+  - Form validation feedback
+- **Free Trial Modal** - Floating CTA for trial signups
+- **Live Chat Widget** - Mock chat interface (bottom right)
+- **BMI Calculator** - Interactive fitness tool
+
+## 🔄 Navigation Features
+
+The navbar intelligently adapts based on the current page:
+
+- **On Home Page:** Uses smooth scroll links to sections
+- **On Other Pages:** Uses standard page navigation
+- **Mobile Responsive:** Hamburger menu with full navigation
+- **Active States:** Highlights current page/section
+  ├── shared/ # Shared code between client and server
+  │ ├── schema.ts # Form validation schemas
+  │ └── routes.ts # API route definitions
+  └── script/ # Build scripts
+
+````
 
 ## 🚀 Deploying to Vercel
 
@@ -93,7 +211,7 @@ gym-template/
 
    ```bash
    npm install -g vercel
-   ```
+````
 
 2. **Login to Vercel**
 
